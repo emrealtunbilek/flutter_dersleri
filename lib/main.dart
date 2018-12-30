@@ -22,15 +22,13 @@ void main() {
               color: Colors.white,
             ),
           ),
-          body: Container(
-            color: Colors.purple,
-            child: Center(
-              child: Text(
-                "Flutter Harika",
-                textAlign: TextAlign.center,
-              ),
+          body: Center(
+            child: Container(
+              color: Colors.green,
+              child: Text("Flutter CheatSheet.",style: TextStyle(fontSize: 24),),
             ),
-          )),
+          ),
+      ),
     ),
   );
 }
