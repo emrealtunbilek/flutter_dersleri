@@ -5,7 +5,7 @@ void main() {
     new MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.cyan, accentColor: Colors.orange),
-      home: new Scaffold(
+      home: Scaffold(
         appBar: AppBar(
           title: Text(
             "Flutter Dersleri",
@@ -23,17 +23,33 @@ void main() {
           ),
         ),
         body: Container(
-            color: Colors.green,
-            child: Text(
-              "Flutter Dersleri by Emre Altunbilek",
-              style: TextStyle(fontSize: 48),
-              textAlign: TextAlign.center,
-            ),
-            constraints: BoxConstraints.expand(width: 400, height: 400),
-          margin: EdgeInsets.symmetric(horizontal: 5,vertical: 80),
-          padding: EdgeInsets.only(top:120.0),
-            
-
+          color: Colors.red,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Icon(
+                Icons.add_circle,
+                size: 64,
+                color: Colors.yellow,
+              ),
+              Icon(
+                Icons.add_circle,
+                size: 64,
+                color: Colors.blue,
+              ),
+              Icon(
+                Icons.add_circle,
+                size: 64,
+                color: Colors.orange,
+              ),
+              Icon(
+                Icons.add_circle,
+                size: 64,
+                color: Colors.purple,
+              ),
+              
+            ],
+          ),
         ),
       ),
     ),
