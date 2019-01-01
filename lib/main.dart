@@ -25,29 +25,57 @@ void main() {
         body: Container(
           color: Colors.red,
           child: Row(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Icon(
-                Icons.add_circle,
-                size: 64,
-                color: Colors.yellow,
+              Expanded(
+                child: Container(
+                    child: Icon(
+                      Icons.add_circle,
+                      size: 64,
+                      color: Colors.yellow,
+                    ),
+                  color: Colors.blue.shade200,
+                ),
+                flex: 2,
               ),
-              Icon(
-                Icons.add_circle,
-                size: 64,
-                color: Colors.blue,
+
+              Expanded(
+                child: Container(
+                  child: Icon(
+                    Icons.add_circle,
+                    size: 64,
+                    color: Colors.yellow,
+                  ),
+                  color: Colors.green.shade200,
+                ),
+                flex: 2,
               ),
-              Icon(
-                Icons.add_circle,
-                size: 64,
-                color: Colors.orange,
+
+              Expanded(
+                child: Container(
+                  child: Icon(
+                    Icons.add_circle,
+                    size: 64,
+                    color: Colors.yellow,
+                  ),
+                  color: Colors.purple.shade200,
+                ),
+                flex: 4,
               ),
-              Icon(
-                Icons.add_circle,
-                size: 64,
-                color: Colors.purple,
+
+              Expanded(
+                child: Container(
+                  child: Icon(
+                    Icons.add_circle,
+                    size: 64,
+                    color: Colors.yellow,
+                  ),
+                  color: Colors.orange.shade200,
+                ),
+                flex: 6,
               ),
-              
+
             ],
           ),
         ),
