@@ -142,9 +142,60 @@ void main() {
                 ],
               ),
             ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 50),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  RaisedButton(
+                    child: Text("Emre Altunbilek"),
+                    color: Colors.orange,
+                    onPressed: () => debugPrint("Fat arrowlu fonksiyon"),
+                  ),
+                  RaisedButton(
+                    child: Text("Flutter ve Dart Dersleri"),
+                    elevation: 12,
+                    textColor: Colors.yellow,
+                    onPressed: () {
+                      debugPrint("Normal lambda expression");
+                      debugPrint("İkinci satır");
+                    },
+                    color: Colors.purple,
+                  ),
+                  RaisedButton(
+                    child: Text("Hızla devam ediyor"),
+                    elevation: 12,
+                    textColor: Colors.black,
+                    onPressed: () {
+                      uzunMethod();
+                    },
+                    color: Colors.red,
+                  ),
+                  RaisedButton(
+                    child: Text("Calısmaya Devam"),
+                    elevation: 12,
+                    textColor: Colors.black,
+                    onPressed: uzunMethod,
+                    color: Colors.blue,
+                  ),
+                  IconButton(
+                      icon: Icon(
+                        Icons.add_circle_outline,
+                        size: 32,
+                      ),
+                      onPressed: () {}
+                      ),
+                  FlatButton(onPressed: (){}, child: Text("Flat Button", style: TextStyle(fontSize: 24),))
+                ],
+              ),
+            ),
           ],
         ),
       ),
     ),
   );
+}
+
+void uzunMethod() {
+  debugPrint("Cok uzun içerikli fonksiyon");
 }
