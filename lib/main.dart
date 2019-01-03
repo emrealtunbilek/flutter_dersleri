@@ -83,7 +83,6 @@ void main() {
                 ],
               ),
             ),
-
             IntrinsicHeight(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -95,8 +94,47 @@ void main() {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          FadeInImage.assetNetwork(placeholder: "assets/images/loading.gif", image: "http://hdqwalls.com/wallpapers/small-memory-lp.jpg"),
+                          FadeInImage.assetNetwork(
+                              placeholder: "assets/images/loading.gif",
+                              image:
+                                  "http://hdqwalls.com/wallpapers/small-memory-lp.jpg"),
                           Text("FadeinImage"),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(4),
+                      color: Colors.red.shade200,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          FlutterLogo(
+                            size: 60,
+                            colors: Colors.orange,
+                            style: FlutterLogoStyle.horizontal,
+                            textColor: Colors.black,
+                          ),
+                          Text("Flutter Logo"),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(4),
+                      color: Colors.red.shade200,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Expanded(
+                            child: Placeholder(
+                              color: Colors.red,
+                              strokeWidth: 2,
+                            ),
+                          ),
+                          Text("Placeholder Widget"),
                         ],
                       ),
                     ),
