@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class EtkinListeOrnek extends StatelessWidget {
 
@@ -34,6 +35,28 @@ class EtkinListeOrnek extends StatelessWidget {
             title: Text(tumOgrenciler[index]._isim),
             subtitle: Text(tumOgrenciler[index]._aciklama),
             trailing: Icon(Icons.add),
+            onTap: (){
+              debugPrint("Secilen eleman $index");
+              Fluttertoast.showToast(
+
+                  msg: "Secilen eleman $index",
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIos: 1,
+                  textColor: Colors.black
+              );
+            },
+            onLongPress: (){
+              debugPrint("Uzun basılan eleman $index");
+              Fluttertoast.showToast(
+                  msg: "Uzun basılan eleman $index",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.CENTER,
+                  timeInSecForIos: 1,
+                  backgroundColor: Colors.blue.shade400,
+                  textColor: Colors.black
+              );
+            },
           ),
         );
       }
@@ -52,4 +75,5 @@ class Ogrenci{
   bool _cinsiyet;
 
   Ogrenci(this._isim, this._aciklama, this._cinsiyet);
+
 }
