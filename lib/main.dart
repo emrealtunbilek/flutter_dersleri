@@ -9,6 +9,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+       /* textTheme: TextTheme(
+          display2: TextStyle(fontSize: 12),
+        ),*/
+
         primarySwatch: Colors.blue,
       ),
       title: "MaterialApp Title",
@@ -23,6 +27,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
   int sayac = 0;
 
+
   MyHomePage({this.title}){
     debugPrint("MyHomePage Statefull Widger constructor");
   }
@@ -30,13 +35,13 @@ class MyHomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     debugPrint("MyHomePage create state tetiklendi");
-    return MyHomePageState();
+    return _MyHomePageState();
   }
 }
 
-class MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
 
-  MyHomePageState(){
+  _MyHomePageState(){
     debugPrint("MyHomePageState constructor tetiklendi");
   }
 
@@ -51,7 +56,7 @@ class MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            sayacDegeriniArtir();
+            _sayacDegeriniArtir();
             debugPrint("sayac degeri arttırıldı set state cagrıldı");
           });
         },
@@ -61,19 +66,35 @@ class MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Butona Basılma Sayısı :"),
+            RaisedButton(child: Text("Artır"), color: Colors.green, onPressed: (){
+              _sayacDegeriniArtir();
+            },),
             Text(
               "${widget.sayac}",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            )
+              style: Theme.of(context).textTheme.display2.copyWith(
+                color: widget.sayac <= 0 ? Colors.red : Colors.green
+              )
+
+            ),
+            RaisedButton(child: Text("Azalt"), color: Colors.red, onPressed: _sayacDegeriniAzalt,),
           ],
         ),
       ),
     );
   }
 
-  void sayacDegeriniArtir() {
-    widget.sayac++;
-    debugPrint("Sayac degeri : ${widget.sayac}");
+  void _sayacDegeriniArtir() {
+    setState(() {
+      widget.sayac++;
+      debugPrint("Sayac degeri : ${widget.sayac}");
+    });
+
+  }
+  void _sayacDegeriniAzalt() {
+    setState(() {
+      widget.sayac--;
+      debugPrint("Sayac degeri : ${widget.sayac}");
+    });
+
   }
 }
