@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ilk_flutter_projesi/ui/etkin_liste_ornek.dart';
-import 'ui/liste_dersleri.dart';
+import 'ui/grid_view_kullanimi.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -10,8 +9,8 @@ void main() {
       primarySwatch: Colors.orange
     ),
     home: Scaffold(
-      appBar: AppBar(title: Text("Liste Dersleri",style: TextStyle(color: Colors.white),), ),
-      body: EtkinListeOrnek(),
+      appBar: AppBar(title: Text("Gridview Dersleri",style: TextStyle(color: Colors.white),), ),
+      body: GridViewOrnek(),
     ),
   ));
 }
