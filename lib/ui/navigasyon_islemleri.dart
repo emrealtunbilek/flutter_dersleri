@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 class NavigasyonIslemleri extends StatelessWidget {
   String baslik = "B SAYFASI";
@@ -46,8 +47,61 @@ class NavigasyonIslemleri extends StatelessWidget {
                 );
               },
             ),
+
+            RaisedButton(
+              child: Text("D Sayfasına Git ve Gelirken Veri Getir"),
+              color: Colors.pink,
+              onPressed: () {
+                Navigator.push<bool>(
+                  context,
+                  MaterialPageRoute(builder: (context) => DSayfasi()),
+                ).then((popOlayindanSonraGelenDeger){
+                  debugPrint("Pop işleminden gelen değer $popOlayindanSonraGelenDeger");
+                });
+              },
+            ),
           ],
         )));
+  }
+}
+
+class DSayfasi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: (){
+        debugPrint("on will pop çalıstı");
+        Navigator.pop(context, false);
+        return Future.value(false);
+      },
+      child: Scaffold(
+          appBar: AppBar(
+            title: Text(
+              "D Sayfası",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "D SAYFASI",
+                    style: TextStyle(color: Colors.red, fontSize: 24),
+                  ),
+                  RaisedButton(
+                    color: Colors.purple,
+                    child: Text("Geri Dön ve Veri Gönder"),
+                    onPressed: () {
+                      Navigator.pop<bool>(context, true);
+                      //true demek ürün silindi
+                      //false ürün silinemedi veya kullanıcı vazgeçti
+                    },
+                  ),
+
+                ],
+              ))),
+    );
   }
 }
 
