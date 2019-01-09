@@ -60,8 +60,93 @@ class NavigasyonIslemleri extends StatelessWidget {
                 });
               },
             ),
+
+            RaisedButton(
+              child: Text("E Sayfasına Git ve Geri Gelme"),
+              color: Colors.pink,
+              onPressed: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ESayfasi()));
+              },
+            ),
           ],
         )));
+  }
+}
+
+class GSayfasi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "G Sayfası",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "G SAYFASI",
+                  style: TextStyle(color: Colors.red, fontSize: 24),
+                )
+              ],
+            )));
+  }
+}
+
+class FSayfasi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "F Sayfası",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "F SAYFASI",
+                  style: TextStyle(color: Colors.red, fontSize: 24),
+                ),
+                RaisedButton(child: Text("G sayfasına Git"),
+                  onPressed: (){
+                    Navigator.pushReplacementNamed(context, "/GPage");
+                  },)
+              ],
+            )));
+  }
+}
+
+class ESayfasi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "E Sayfası",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "E SAYFASI",
+                  style: TextStyle(color: Colors.red, fontSize: 24),
+                ),
+                RaisedButton(child: Text("F sayfasına Git"),
+                onPressed: (){
+                  Navigator.pushNamed(context,"/FPage");
+                },)
+              ],
+            )));
   }
 }
 
