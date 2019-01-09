@@ -116,7 +116,7 @@ class FSayfasi extends StatelessWidget {
                 ),
                 RaisedButton(child: Text("G sayfasına Git"),
                   onPressed: (){
-                    Navigator.pushReplacementNamed(context, "/GPage");
+                    Navigator.pushReplacementNamed(context, "/GPageb");
                   },)
               ],
             )));
