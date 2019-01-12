@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ilk_flutter_projesi/ui/custom_scroll_ve_slivers.dart';
+import 'package:ilk_flutter_projesi/ui/form_islemleri.dart';
 import 'package:ilk_flutter_projesi/ui/navigasyon_islemleri.dart';
 import 'ui/grid_view_kullanimi.dart';
 
@@ -8,10 +9,11 @@ void main() {
   runApp(MaterialApp(
     title: "Flutter Dersleri",
 
-   // initialRoute: "/CPage/DPage/FPage",
+    initialRoute: "/formIslemleri",
 
     routes: {
       '/'      : (context) => NavigasyonIslemleri(),
+      '/formIslemleri' : (context) => FormIslemleri(),
       '/CPage' : (context) => CSayfasi(),
       '/DPage' : (context) => DSayfasi(),
       '/GPage' : (context) => GSayfasi(),
@@ -28,8 +30,7 @@ void main() {
       }
     },
 
-
-    onUnknownRoute: (RouteSettings settings) => MaterialPageRoute(builder: (context) => DSayfasi() ),
+    onUnknownRoute: (RouteSettings settings) => MaterialPageRoute(builder: (context) => DSayfasi(),),
 
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
