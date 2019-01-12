@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
-class FormIslemleri extends StatefulWidget {
+class TextFieldIslemleri extends StatefulWidget {
+
   @override
-  _FormIslemleriState createState() => _FormIslemleriState();
+  _TextFieldIslemleriState createState() => _TextFieldIslemleriState();
+
 }
 
-class _FormIslemleriState extends State<FormIslemleri> {
+class _TextFieldIslemleriState extends State<TextFieldIslemleri> {
 
   String girilenMetin="";
   int maxLine=1;
   FocusNode _fNode ;
+  TextEditingController textController1;
+
+
   
   @override
   void initState() {
     super.initState();
     _fNode=FocusNode();
+    textController1=TextEditingController(text: "varsayılan");
 
     _fNode.addListener((){
       setState(() {
@@ -31,6 +37,7 @@ class _FormIslemleriState extends State<FormIslemleri> {
   @override
   void dispose() {
     _fNode.dispose();
+    textController1.dispose();
     super.dispose();
   }
 
@@ -41,9 +48,35 @@ class _FormIslemleriState extends State<FormIslemleri> {
           title: Text("Input Islemleri"),
         ),
 
-        floatingActionButton: FloatingActionButton(onPressed: (){
-          FocusScope.of(context).requestFocus(_fNode);
-        }, child: Icon(Icons.edit),),
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+
+            Container(
+              width: 24,
+              height: 24,
+              child:  FloatingActionButton(heroTag: "cc",onPressed: (){
+                FocusScope.of(context).requestFocus(_fNode);
+              },child: Icon(Icons.edit,size: 12,), backgroundColor: Colors.green,),
+            ),
+
+
+            SizedBox(height: 10,),
+
+            FloatingActionButton(
+              heroTag: "aa",
+              onPressed: (){
+              textController1.text="Butondan geldim";
+            },child: Icon(Icons.edit), mini: true, backgroundColor: Colors.pink,),
+            SizedBox(height: 10,),
+
+
+
+            FloatingActionButton(heroTag: "bb",onPressed: (){
+              debugPrint(textController1.text.toString());
+            }, child: Icon(Icons.edit),),
+          ],
+        ),
         body: ListView(
           children: <Widget>[
 
@@ -54,6 +87,7 @@ class _FormIslemleriState extends State<FormIslemleri> {
                 textInputAction: TextInputAction.done,
                 autofocus: false,
                 maxLines: maxLine,
+                controller: textController1,
                 maxLength: 20,
                 focusNode: _fNode,
                 decoration: InputDecoration(
@@ -85,6 +119,7 @@ class _FormIslemleriState extends State<FormIslemleri> {
                 autofocus: false,
                 maxLines: 1,
                 maxLength: 20,
+                controller: textController1,
                 decoration: InputDecoration(
                     hintText: "Metni buraya başlık",
                     labelText: "Başlık",
