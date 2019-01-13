@@ -10,6 +10,9 @@ class _DigerFormElemanlariState extends State<DigerFormElemanlari> {
   String sehir = "";
   bool switchState = false;
   double sliderDeger = 10;
+  String secilenRenk = "Kirmizi";
+  List<String> sehirler = ["Ankara", "Bursa", "Izmir", "Hatay"];
+  String secilenSehir="Ankara";
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +106,58 @@ class _DigerFormElemanlariState extends State<DigerFormElemanlari> {
               divisions: 20,
               label: sliderDeger.toString(),
             ),
+
+
+            DropdownButton<String>(items: [
+              DropdownMenuItem<String>(child: Row(
+                children: <Widget>[
+                  Container(width: 24,
+                    height: 24,
+                    color: Colors.red,
+                    margin: EdgeInsets.only(right: 10),),
+                  Text("Kırmızı"),
+                ],
+              ), value: "Kirmizi",),
+              DropdownMenuItem<String>(child: Row(
+                children: <Widget>[
+                  Container(width: 24,
+                    height: 24,
+                    color: Colors.blue,
+                    margin: EdgeInsets.only(right: 10),),
+                  Text("Mavi"),
+                ],
+              ), value: "Mavi",),
+              DropdownMenuItem<String>(child: Row(
+                children: <Widget>[
+                  Container(width: 24,
+                    height: 24,
+                    color: Colors.green,
+                    margin: EdgeInsets.only(right: 10),),
+                  Text("Yeşil"),
+                ],
+              ), value: "Yesil",),
+
+            ], onChanged: (String secilen) {
+              setState(() {
+                secilenRenk = secilen;
+              });
+            },
+              hint: Text("Seciniz"),
+              value: secilenRenk,
+            ),
+
+            DropdownButton<String>(items: sehirler.map((oankiSehir) {
+              return DropdownMenuItem<String>(
+                child: Text(oankiSehir), value: oankiSehir,);
+            }).toList(),
+              onChanged: (s){
+                setState(() {
+                  secilenSehir = s;
+                });
+              },
+              value: secilenSehir,
+            ),
+            
           ],
         ),
       ),
