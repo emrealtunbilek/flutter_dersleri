@@ -157,7 +157,7 @@ class _DigerFormElemanlariState extends State<DigerFormElemanlari> {
               },
               value: secilenSehir,
             ),
-            
+
           ],
         ),
       ),

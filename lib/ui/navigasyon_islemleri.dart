@@ -94,9 +94,16 @@ class NavigasyonIslemleri extends StatelessWidget {
 
                   RaisedButton(
                     child: Text("Diğer Form Elemanları"),
-                    color: Colors.yellowAccent.shade100,
+                    color: Colors.pink.shade100,
                     onPressed: () {
                       Navigator.pushNamed(context, "/digerFormElemanlari");
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("Date Time Picker"),
+                    color: Colors.pink,
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/tarihSaat");
                     },
                   ),
                 ],
