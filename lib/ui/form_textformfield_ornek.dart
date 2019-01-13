@@ -127,7 +127,7 @@ class _FormveTextFormFieldState extends State<FormveTextFormField> {
     else
       return null;
   }
-  
+
   String _isimKontrol(String isim){
     RegExp regex=RegExp("^[a-zA-Z]+\$");
      if (!regex.hasMatch(isim))

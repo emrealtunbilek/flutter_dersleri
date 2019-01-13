@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ilk_flutter_projesi/ui/custom_scroll_ve_slivers.dart';
+import 'package:ilk_flutter_projesi/ui/diger_form_elemanlari.dart';
 import 'package:ilk_flutter_projesi/ui/form_textformfield_ornek.dart';
 import 'package:ilk_flutter_projesi/ui/text_field_ozellikleri.dart';
 import 'package:ilk_flutter_projesi/ui/navigasyon_islemleri.dart';
@@ -10,12 +11,13 @@ void main() {
   runApp(MaterialApp(
     title: "Flutter Dersleri",
 
-    initialRoute: "/textFormField",
+    initialRoute: "/digerFormElemanlari",
 
     routes: {
       '/'      : (context) => NavigasyonIslemleri(),
       '/textFieldIslemleri' : (context) => TextFieldIslemleri(),
       '/textFormField' : (context) => FormveTextFormField(),
+      '/digerFormElemanlari' : (context) => DigerFormElemanlari(),
       '/CPage' : (context) => CSayfasi(),
       '/DPage' : (context) => DSayfasi(),
       '/GPage' : (context) => GSayfasi(),
