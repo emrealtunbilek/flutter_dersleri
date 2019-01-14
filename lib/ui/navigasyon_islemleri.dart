@@ -106,6 +106,14 @@ class NavigasyonIslemleri extends StatelessWidget {
                       Navigator.pushNamed(context, "/tarihSaat");
                     },
                   ),
+
+                  RaisedButton(
+                    child: Text("Stepper Kullanımı"),
+                    color: Colors.indigo.shade300,
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/stepper");
+                    },
+                  ),
                 ],
               )),
         ),
